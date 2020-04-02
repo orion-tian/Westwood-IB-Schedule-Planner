@@ -1,0 +1,682 @@
+/* Copyright (c) 2019 Orion Wuji Tian */
+
+var subjects = ["English", 
+                "ForeignLanguage", 
+                "SocialStudies",                     
+                "Science", 
+                "Math", 
+                "Elective"]
+
+var allCatalogs = 
+{
+    "English":
+    [
+        {
+            "Name":"English 1 Pre-AP/IB Prep",
+            "Grade":"9",
+            "Credit":1,
+            "Prereq":"none"
+        },
+        {
+            "Name":"English 2 Pre-AP/IB Prep",
+            "Grade":"10",
+            "Credit":1,
+            "Prereq":"English 1 Pre-AP/IB Prep"
+        },
+        {
+            "Name":"Literature 1 IB",
+            "Grade":"11",
+            "Credit":1,
+            "Prereq":"English 2 Pre-AP/IB Prep"
+        },
+        {
+            "Name":"Literature 2 IB",
+            "Grade":"12",
+            "Credit":1,
+            "Prereq":"Literature 1 IB"
+        }
+    ],
+    "ForeignLanguage" : 
+    {
+        "Chinese" : 
+        [
+            {   
+                "Name":"Chinese 1",
+                "Grade":"9, 10, 11, 12", 
+                "Credit":1, 
+                "Prereq":"none"
+            },
+            {
+                "Name":"Chinese 2 Pre-AP/IB Prep",
+                "Grade":"9, 10, 11, 12",
+                "Credit":1,
+                "Prereq":"Chinese 1"
+            },
+            {
+                "Name":"Chinese 3 IB",
+                "Grade":"9, 10, 11",
+                "Credit":1,
+                "Prereq":"Chinese 2 Pre-AP/IB Prep"
+            },
+            {
+                "Name":"Chinese 4 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"Chinese 3 IB"
+            },
+            {
+                "Name":"Chinese 5 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"Chinese 4 IB"
+            },
+            {
+                "Name":"Chinese 6 IB",
+                "Grade":"12",
+                "Credit":1,
+                "Prereq":"Chinese 5 IB"
+            } 
+        ],
+        "Spanish" : 
+        [
+             {   
+                "Name":"Spanish 1",
+                "Grade":"9, 10, 11, 12", 
+                "Credit":1, 
+                "Prereq":"none"
+            },
+            {
+                "Name":"Spanish 2 Pre-AP/IB Prep",
+                "Grade":"9, 10, 11, 12",
+                "Credit":1,
+                "Prereq":"Spanish 1"
+            },
+            {
+                "Name":"Spanish 3 IB",
+                "Grade":"9, 10, 11",
+                "Credit":1,
+                "Prereq":"Spanish 2 Pre-AP/IB Prep"
+            },
+            {
+                "Name":"Spanish 4 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"Spanish 3 IB"
+            },
+            {
+                "Name":"Spanish 5 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"Spanish 4 IB"
+            },
+            {
+                "Name":"Spanish 6 IB",
+                "Grade":"12",
+                "Credit":1,
+                "Prereq":"Spanish 5 IB"
+            }
+        ],
+        "German" : 
+        [
+             {   
+                "Name":"German 1",
+                "Grade":"9, 10, 11, 12", 
+                "Credit":1, 
+                "Prereq":"none"
+            },
+            {
+                "Name":"German 2 Pre-AP/IB Prep",
+                "Grade":"9, 10, 11, 12",
+                "Credit":1,
+                "Prereq":"German 1"
+            },
+            {
+                "Name":"German 3 IB",
+                "Grade":"9, 10, 11",
+                "Credit":1,
+                "Prereq":"German 2 Pre-AP/IB Prep"
+            },
+            {
+                "Name":"German 4 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"German 3 IB"
+            },
+            {
+                "Name":"German 5 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"German 4 IB"
+            },
+            {
+                "Name":"German 6 IB",
+                "Grade":"12",
+                "Credit":1,
+                "Prereq":"German 5 IB"
+            }
+        ],
+        "French" : 
+        [
+             {   
+                "Name":"French 1",
+                "Grade":"9, 10, 11, 12", 
+                "Credit":1, 
+                "Prereq":"none"
+            },
+            {
+                "Name":"French 2 Pre-AP/IB Prep",
+                "Grade":"9, 10, 11, 12",
+                "Credit":1,
+                "Prereq":"French 1"
+            },
+            {
+                "Name":"French 3 IB",
+                "Grade":"9, 10, 11",
+                "Credit":1,
+                "Prereq":"French 2 Pre-AP/IB Prep"
+            },
+            {
+                "Name":"French 4 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"French 3 IB"
+            },
+            {
+                "Name":"French 5 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"French 4 IB"
+            },
+            {
+                "Name":"French 6 IB",
+                "Grade":"12",
+                "Credit":1,
+                "Prereq":"French 5 IB"
+            }
+        ],
+        "Latin" : 
+        [
+             {   
+                "Name":"Latin 1",
+                "Grade":"9, 10, 11, 12", 
+                "Credit":1, 
+                "Prereq":"none"
+            },
+            {
+                "Name":"Latin 2 Pre-AP/IB Prep",
+                "Grade":"9, 10, 11, 12",
+                "Credit":1,
+                "Prereq":"Latin 1"
+            },
+            {
+                "Name":"Latin 3 IB",
+                "Grade":"9, 10, 11",
+                "Credit":1,
+                "Prereq":"Latin 2 Pre-AP/IB Prep"
+            },
+            {
+                "Name":"Latin 4 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"Latin 3 IB"
+            },
+            {
+                "Name":"Latin 5 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"Latin 4 IB"
+            },
+            {
+                "Name":"Latin 6 IB",
+                "Grade":"12",
+                "Credit":1,
+                "Prereq":"Latin 5 IB"
+            }
+        ]
+    },
+    "SocialStudies":
+    {
+        "9thAnd10thGrade" :
+        [
+            {
+                "Name":"Human Geography Studies IB Prep",
+                "Grade":"9",
+                "Credit":1,
+                "Prereq":"none"
+            },
+            {
+                "Name":"United States History AP IB Prep",
+                "Grade":"10",
+                "Credit":1,
+                "Prereq":"none"
+            }
+        ],
+        "History" :
+        [
+            {
+                "Name":"History 1 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"none"
+            },
+            {
+                "Name":"History 2 IB",
+                "Grade":"12",
+                "Credit":1,
+                "Prereq":"History 1 IB"
+            }
+        ],
+        "Economics":
+        [
+            {
+                "Name":"Economics 1 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"none"
+            }
+        ],
+        "Psychology":
+        [
+            {
+                "Name":"Psychology 1 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"none"
+            }
+        ]
+    },
+    "Science":  
+    {
+        "9thAnd10thGrade":
+        [
+            {
+            "Name":"Biology Pre-AP/IB Prep",
+            "Grade":"9",
+            "Credit":1,
+            "Prereq":"none"
+            },
+            {
+            "Name":"Chemistry Pre-AP/IB Prep",
+            "Grade":"10",
+            "Credit":1,
+            "Prereq":"none"
+            }
+        ],
+
+        "Biology":
+        [
+            {
+            "Name":"Biology 1 IB",
+            "Grade":"11, 12",
+            "Credit":1,
+            "Prereq":"Biology Pre-AP/IB Prep"
+            },
+            {
+            "Name":"Biology 2 IB",
+            "Grade":"12",
+            "Credit":1,
+            "Prereq":"Biology 1 IB"
+            }
+        ],
+        "Chemistry":
+        [
+            {
+            "Name":"Chemistry 1 IB",
+            "Grade":"11, 12",
+            "Credit":1,
+            "Prereq":"Chemistry Pre-AP/IB Prep"
+            },
+            {
+            "Name":"Chemistry 2 IB",
+            "Grade":"12",
+            "Credit":1,
+            "Prereq":"Chemistry 1 IB"
+            }
+        ],
+        "Physics":
+        [
+            {
+            "Name":"Physics 1 IB",
+            "Grade":"11, 12",
+            "Credit":1,
+            "Prereq":"none"
+            },
+            {
+            "Name":"Physics 2 IB",
+            "Grade":"12",
+            "Credit":1,
+            "Prereq":"Physics 1 IB"
+            }
+        ],
+        "Comp. Sci.":
+        [
+            {
+            "Name":"Computer Science SL 1 IB",
+            "Grade":"10",
+            "Credit":1,
+            "Prereq":"none"
+            },
+            {
+            "Name":"Computer Science SL 2 IB",
+            "Grade":"11",
+            "Credit":1,
+            "Prereq":"Computer Science SL 1 IB"
+            },
+            {
+            "Name":"Computer Science HL 1 IB",
+            "Grade":"12",
+            "Credit":1,
+            "Prereq":"Computer Science SL 2 IB"
+            }
+        ]
+    },
+    "Math" :
+    {
+        "Analysis":
+        [
+            {
+                "Name":"Geometry Pre-AP/IB Prep",
+                "Grade":"10",
+                "Credit":1,
+                "Prereq":"Algebra 1"
+            },
+            {
+                "Name":"IB Algebra 2",
+                "Grade":"9, 10, 11",
+                "Credit":1,
+                "Prereq":"Geometry Pre-AP/IB Prep"
+            },
+            {
+                "Name":"Math/Analysis 1 (Precal) IB",
+                "Grade":"9, 10, 11",
+                "Credit":1,
+                "Prereq":"IB Algebra 2"
+            },
+            {
+                "Name":"Math/Analysis 2 (Calc.) IB",
+                "Grade":"10, 11, 12",
+                "Credit":1,
+                "Prereq":"Math/Analysis 1 (Precal) IB"
+            },
+            {
+                "Name":"Math/Analysis 3 (Adv. Calc.) IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"Math/Analysis 2 (Calc.) IB"
+            },
+            {
+                "Name":"Math/Analysis 4 (MV) IB",
+                "Grade":"12",
+                "Credit":1,
+                "Prereq":"Math/Analysis 3 (Adv. Calc.) IB"
+            }
+        ],
+        "Application":
+        [
+            {
+                "Name":"Algebra 1",
+                "Grade":"9",
+                "Credit":1,
+                "Prereq":"none"
+            },
+            {
+                "Name":"Geometry Pre-AP/IB Prep",
+                "Grade":"10",
+                "Credit":1,
+                "Prereq":"Algebra 1"
+            },
+            {
+                "Name":"IB Algebra 2",
+                "Grade":"9, 10, 11",
+                "Credit":1,
+                "Prereq":"Geometry Pre-AP/IB Prep"
+            },
+            {
+                "Name":"Math/Applications 1 (Stats) IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"IB Algebra 2"
+            },
+            {
+                "Name":"Math/Applications 2 (Adv. Stats) IB",
+                "Grade":"12",
+                "Credit":1,
+                "Prereq":"Math/Applications 1 (Stats) IB"
+            }
+
+        ]
+
+    },
+    "Elective" :
+    {
+        "Philosophy":
+        [
+            {
+                "Name":"IB Philosophy",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"none"
+            }
+        ],
+        "Visual Arts" :
+        [
+            {
+                "Name":"Visual Arts 1 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"Art"
+            },
+            {
+                "Name":"Visual Arts 2 IB",
+                "Grade":"12",
+                "Credit":1,
+                "Prereq":"Visual Arts 1 IB"
+            }
+        ],
+        "Theater Arts" :
+        [
+            {
+                "Name":"Theater 1 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"Theater"
+            },
+            {
+                "Name":"Theater 2 IB",
+                "Grade":"12",
+                "Credit":1,
+                "Prereq":"Theater 1 IB"
+            }
+        ],
+        "Dance" :
+        [
+            {
+                "Name":"Dance 1 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"none"
+            },
+            {
+                "Name":"Dance 2 IB",
+                "Grade":"12",
+                "Credit":1,
+                "Prereq":"Dance 1 IB"
+            }
+        ],
+        "Business" :
+        [
+            {
+                "Name":"Business 1 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"none"
+            }
+        ],
+        "Chinese" : 
+        [
+            {
+                "Name":"Chinese 4 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"Chinese 3 IB"
+            },
+            {
+                "Name":"Chinese 5 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"Chinese 4 IB"
+            }
+        ],
+        "Spanish" : 
+        [
+
+             {
+                "Name":"Spanish 4 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"Spanish 3 IB"
+             },
+             {
+                "Name":"Spanish 5 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"Spanish 4 IB"
+             }
+        ],
+        "German" : 
+        [
+
+             {
+                "Name":"German 4 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"German 3 IB"
+             },
+             {
+                "Name":"German 5 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"German 4 IB"
+             }
+        ],
+        "French" : 
+        [
+
+             {
+                "Name":"French 4 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"French 3 IB"
+             },
+             {
+                "Name":"French 5 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"French 4 IB"
+             }
+        ],
+        "Latin" : 
+        [
+
+             {
+                "Name":"Latin 4 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"Latin 3 IB"
+             }
+        ],
+        "History" :
+        [
+            {
+                "Name":"History 1 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"none"
+            },
+            {
+                "Name":"History 2 IB",
+                "Grade":"12",
+                "Credit":1,
+                "Prereq":"History 1 IB"
+            }
+        ],
+        "Economics":
+        [
+            {
+                "Name":"Economics 1 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"none"
+            }
+        ],
+        "Psychology":
+        [
+            {
+                "Name":"Psychology 1 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"none"
+            }
+        ],
+        "Biology":
+        [
+            {
+                "Name":"Biology 1 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"none"
+            },
+            {
+                "Name":"Biology 2 IB",
+                "Grade":"12",
+                "Credit":1,
+                "Prereq":"Biology 1 IB"
+            }
+        ],
+        "Chemistry":
+        [
+            {
+                "Name":"Chemistry 1 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"none"
+            },
+            {
+                "Name":"Chemistry 2 IB",
+                "Grade":"12",
+                "Credit":1,
+                "Prereq":"Chemistry 1 IB"
+            }
+        ],
+        "Physics":
+        [
+            {
+                "Name":"Physics 1 IB",
+                "Grade":"11, 12",
+                "Credit":1,
+                "Prereq":"none"
+            },
+            {
+                "Name":"Physics 2 IB",
+                "Grade":"12",
+                "Credit":1,
+                "Prereq":"Physics 1 IB"
+            }
+        ],
+        "Comp. Sci.":
+        [
+            {
+                "Name":"Computer Science SL 2 IB",
+                "Grade":"11",
+                "Credit":1,
+                "Prereq":"Computer Science SL 1 IB"
+            },
+            {
+                "Name":"Computer Science HL 1 IB",
+                "Grade":"12",
+                "Credit":1,
+                "Prereq":"Computer Science SL 2 IB"
+            }
+        ]
+    }
+}

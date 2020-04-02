@@ -1,0 +1,137 @@
+/* Copyright (c) 2019 Orion Wuji Tian */
+
+var options =
+{
+    NumOfSubjects: 6,
+    Subjects:
+    [
+        {
+            Subject: "English",
+            numOfButtons: 1,
+            Button: 
+            [
+                {
+                    Name: "Level",
+                    ButtonType: "Toggle",
+                    ButtonChoices: ["SL", "HL"]
+                }
+            ]
+        },
+        {
+            Subject:"Foreign Language",
+            numOfButtons: 3,
+            Button:
+            [
+                {
+                    Name: "Level",
+                    ButtonType: "Toggle",
+                    ButtonChoices: ["SL", "HL"]
+                },
+                {
+                    Name: "Topic",
+                    ButtonType: "DropDownList",
+                    ButtonChoices: ["Chinese", "French", "German", "Latin", "Spanish"]
+                },
+                {
+                    Name: "Starting Level",
+                    ButtonType: "DropDownList",
+                    ButtonChoices: ["1", "2", "3"]
+                }
+            ]
+        },
+        {
+            Subject:"Social Studies",
+            numOfButtons: 3,
+            Button: 
+            [
+                {
+                    Name: "Level",
+                    ButtonType: "Toggle",
+                    ButtonChoices: ["SL", "HL"]
+                },
+                {
+                    Name: "Topic",
+                    ButtonType: "DropDownList",
+                    ButtonChoices: ["Economics", "History", "Psychology"]
+                },
+                {
+                    Name: "Starting Year",
+                    ButtonType: "DropDownList",
+                    ButtonChoices: ["Junior", "Senior"]
+                }
+            ]
+
+        },
+        {
+            Subject:"Science",
+            numOfButtons: 3,
+            Button:
+            [
+                {
+                    Name: "Level",
+                    ButtonType: "Toggle",
+                    ButtonChoices: ["SL", "HL"]
+                },
+                {
+                    Name: "Topic",
+                    ButtonType: "DropDownList",
+                    ButtonChoices: ["Biology", "Chemistry", "Physics", "Comp. Sci."]
+                },
+                {
+                    Name: "Starting Year",
+                    ButtonType: "DropDownList",
+                    ButtonChoices: ["Junior", "Senior"]
+                }
+            ]
+        },
+        {
+            Subject:"Math",
+            numOfButtons: 3,
+            Button:
+            [
+                {
+                    Name: "Level",
+                    ButtonType: "Toggle",
+                    ButtonChoices: ["SL", "HL"]
+                },
+                {
+                    Name: "Topic",
+                    ButtonType: "DropDownList",
+                    ButtonChoices: ["Analysis", "Application"]
+                },
+                {
+                    Name: "Ending Level",
+                    ButtonType: "DropDownList",
+                    ButtonChoices:["1","2", "3", "4"]
+                }
+
+            ]
+
+        },
+        {
+            Subject:"IB Elective",
+            numOfButtons: 3,
+            Button: 
+            [
+                {
+                    Name: "Level",
+                    ButtonType: "Toggle",
+                    ButtonChoices: ["SL", "HL"]
+                },
+                {
+                    Name: "Topic",
+                    ButtonType: "DropDownList",
+                    ButtonChoices: ["Philosophy", "Theater Arts", "Visual Arts", "Dance", "Business", " ",
+                                    "Chinese", "French", "German", "Latin", "Spanish", " ",
+                                    "Economics", "History", "Psychology", " ",
+                                    "Biology", "Chemistry", "Physics", "Comp. Sci."]
+                },
+                { 
+                    Name: "Starting Year",
+                    ButtonType: "DropDownList",
+                    ButtonChoices: ["Junior", "Senior"]
+                }
+            ]
+        }
+    ]
+}

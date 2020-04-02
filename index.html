@@ -1,0 +1,71 @@
+<!-- Copyright (c) 2019 Orion Wuji Tian -->
+
+<!DOCTYPE html>
+<html> 
+    
+    <body>
+
+        <!-- The Modal -->
+        <div id="disclaimer" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header"> <h2>Disclaimer</h2> </div>
+                <div class="modal-body" id="modal-body">
+                    <script src="./javascript/disclaimer.js"></script>
+                </div>
+            </div>
+        </div>
+   
+        <!-- Main Page -->
+        <h1>IB Course Planning</h1>
+        <h3>Requirements</h3>
+        <ol id="requirements">
+            <script src="./javascript/requirements.js"></script>
+        </ol>
+        
+        <h3>Choices</h3>
+        <table id = "Selection" class = "SelectionStyle"></table>
+        <table id = "SubmitAndClearButtons"></table>
+
+        <h3>Plan</h3>
+        <div id = "ErrorsAndExceptions"></div>
+        <p id = "Debug"></p>
+        <table id = "OverallSchedule" class = "ScheduleStyle"></table>
+        <p id = "gradConstraints"></p>
+
+        <!-- Global vars and definitions -->
+        <script>
+        var choices = {} // Map<string, [string, string]>() 
+        var gradConstraints = {}
+        </script>
+        <script src="./json/catalog.json"></script>
+        <script src = "./json/optionsTable.json"></script>
+        
+        <!-- create Error and Exception Fields -->
+        <script src = "./javascript/createErrorAndExceptionFields.js"></script>
+
+        <!-- Create all tables -->
+        <script src = "./javascript/createTables.js"></script>
+
+        <!-- Populate choices, add submit/clear -->
+        <script src = "./javascript/populateChoices.js"></script>
+
+        <!-- Subject Schedules -->
+        <script src="./javascript/subjectSchedules/englishSchedule.js"></script>
+        <script src="./javascript/subjectSchedules/foreignLanguageSchedule.js"></script>
+        <script src="./javascript/subjectSchedules/socialStudiesSchedule.js"></script>
+        <script src="./javascript/subjectSchedules/scienceSchedule.js"></script>
+        <script src="./javascript/subjectSchedules/mathSchedule.js"></script>
+        <script src="./javascript/subjectSchedules/electiveSchedule.js"></script>
+        <!-- Error Function -->
+        <script src="./javascript/subjectSchedules/errorFunction.js"></script>
+        <!-- Generate plan -->
+        <script src = "./javascript/submitClearChoicesFunctions.js"></script>
+        <script src = "./javascript/checkConstraints.js"></script>
+        
+        <!-- Style -->
+        <link rel = "stylesheet" href= "./css.css">
+
+    </body>    
+   
+</html>
