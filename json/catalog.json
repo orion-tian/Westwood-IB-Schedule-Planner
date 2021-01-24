@@ -357,16 +357,16 @@ var allCatalogs =
             "Prereq":"none"
             },
             {
-            "Name":"Computer Science SL 1 IB",
+            "Name":"Computer Science SL 2 IB",
             "Grade":"11",
             "Credit":1,
             "Prereq":"AP Computer Science - A"
             },
             {
-            "Name":"Computer Science HL 2 IB",
+            "Name":"Computer Science HL 1 IB",
             "Grade":"12",
             "Credit":1,
-            "Prereq":"Computer Science SL 1 IB"
+            "Prereq":"Computer Science SL 2 IB"
             }
         ]
     },
@@ -648,16 +648,16 @@ var allCatalogs =
         "Comp. Sci.":
         [
             {
-                "Name":"Computer Science SL 1 IB",
+                "Name":"Computer Science SL 2 IB",
                 "Grade":"11",
                 "Credit":1,
-                "Prereq":"Computer Science SL 1 IB"
+                "Prereq":"AP Computer Science - A"
             },
             {
-                "Name":"Computer Science HL 2 IB",
+                "Name":"Computer Science HL 1 IB",
                 "Grade":"12",
                 "Credit":1,
-                "Prereq":"Computer Science SL 1 IB"
+                "Prereq":"Computer Science SL 2 IB"
             }
         ]
     }
