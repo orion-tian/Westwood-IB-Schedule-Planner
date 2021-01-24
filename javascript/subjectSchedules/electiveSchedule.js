@@ -43,7 +43,7 @@ function electiveSchedule()
     //Check Overlap
     if(checkOverlap() != 0)
     {
-        document.getElementById("ElectiveError").innerHTML = "Elective Erro: You've already chosen this course elsewhere." 
+        document.getElementById("ElectiveError").innerHTML = "Elective Error: You've already chosen this course elsewhere." 
         errorFunction(electiveOutput, "Elective");
     }
     else
