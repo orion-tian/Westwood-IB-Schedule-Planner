@@ -43,7 +43,7 @@ function electiveSchedule()
     //Check Overlap
     if(checkOverlap() != 0)
     {
-        document.getElementById("ElectiveError").innerHTML = "You've already chosen this course elsewhere." 
+        document.getElementById("ElectiveError").innerHTML = "Elective Erro: You've already chosen this course elsewhere." 
         errorFunction(electiveOutput, "Elective");
     }
     else
@@ -55,7 +55,7 @@ function electiveSchedule()
         
         if(topic === " ")
         {
-            document.getElementById("ElectiveError").innerHTML = "You have not chosen a course."
+            document.getElementById("ElectiveError").innerHTML = "Elective Error: You have not chosen a course."
             errorFunction(electiveOutput, "Elective");
         }
         if(topic === "Latin")
@@ -75,6 +75,35 @@ function electiveSchedule()
             else
             {
                 electiveOutput.Level = topic + " SL"
+            }
+        }
+        if(topic === "Dance" || topic === "Theater Arts" || topic === "Visual Arts")
+        {
+            electiveOutput[11] = elective[0].Name
+            electiveOutput[12] = elective[1].Name
+            
+            if(level === "true")
+            {
+                electiveOutput.Level = topic + " HL"
+                if(start === "Senior")
+                {
+                    document.getElementById("ElectiveError").innerHTML = "Elective Error: You must start in Junior year to HL an elective."
+                    document.getElementById("OverallSchedule").rows[findSubjectRow("Elective")].style = "color: red"
+                }
+                if(elective.length < 2)
+                {
+                    document.getElementById("ElectiveError").innerHTML = "Elective Error: " + topic + " does not have an HL option."
+                    errorFunction(electiveOutput, "Elective");
+                }
+            }
+            else
+            {
+                electiveOutput.Level = topic + " SL"
+                if(start === "Senior")
+                {
+                    document.getElementById("ElectiveError").innerHTML = "Elective Error: " + topic + " requires 2 years of study even for SL."
+                    errorFunction(electiveOutput, "Elective");
+                }
             }
         }
         else

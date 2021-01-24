@@ -351,22 +351,22 @@ var allCatalogs =
         "Comp. Sci.":
         [
             {
-            "Name":"Computer Science SL 1 IB",
+            "Name":"AP Computer Science - A",
             "Grade":"10",
             "Credit":1,
             "Prereq":"none"
             },
             {
-            "Name":"Computer Science SL 2 IB",
+            "Name":"Computer Science SL 1 IB",
             "Grade":"11",
             "Credit":1,
-            "Prereq":"Computer Science SL 1 IB"
+            "Prereq":"AP Computer Science - A"
             },
             {
-            "Name":"Computer Science HL 1 IB",
+            "Name":"Computer Science HL 2 IB",
             "Grade":"12",
             "Credit":1,
-            "Prereq":"Computer Science SL 2 IB"
+            "Prereq":"Computer Science SL 1 IB"
             }
         ]
     },
@@ -387,7 +387,7 @@ var allCatalogs =
                 "Prereq":"Geometry Pre-AP/IB Prep"
             },
             {
-                "Name":"Math/Analysis 1 (Precal) IB",
+                "Name":"IB Precal",
                 "Grade":"9, 10, 11",
                 "Credit":1,
                 "Prereq":"IB Algebra 2"
@@ -396,7 +396,7 @@ var allCatalogs =
                 "Name":"Math/Analysis 2 (Calc.) IB",
                 "Grade":"10, 11, 12",
                 "Credit":1,
-                "Prereq":"Math/Analysis 1 (Precal) IB"
+                "Prereq":"IB Precal"
             },
             {
                 "Name":"Math/Analysis 3 (Adv. Calc.) IB",
@@ -449,15 +449,6 @@ var allCatalogs =
     },
     "Elective" :
     {
-        "Philosophy":
-        [
-            {
-                "Name":"IB Philosophy",
-                "Grade":"11, 12",
-                "Credit":1,
-                "Prereq":"none"
-            }
-        ],
         "Visual Arts" :
         [
             {
@@ -501,15 +492,6 @@ var allCatalogs =
                 "Grade":"12",
                 "Credit":1,
                 "Prereq":"Dance 1 IB"
-            }
-        ],
-        "Business" :
-        [
-            {
-                "Name":"Business 1 IB",
-                "Grade":"11, 12",
-                "Credit":1,
-                "Prereq":"none"
             }
         ],
         "Chinese" : 
@@ -666,16 +648,16 @@ var allCatalogs =
         "Comp. Sci.":
         [
             {
-                "Name":"Computer Science SL 2 IB",
+                "Name":"Computer Science SL 1 IB",
                 "Grade":"11",
                 "Credit":1,
                 "Prereq":"Computer Science SL 1 IB"
             },
             {
-                "Name":"Computer Science HL 1 IB",
+                "Name":"Computer Science HL 2 IB",
                 "Grade":"12",
                 "Credit":1,
-                "Prereq":"Computer Science SL 2 IB"
+                "Prereq":"Computer Science SL 1 IB"
             }
         ]
     }
