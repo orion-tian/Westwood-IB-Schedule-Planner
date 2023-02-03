@@ -121,7 +121,7 @@ var options =
                 {
                     Name: "Topic",
                     ButtonType: "DropDownList",
-                    ButtonChoices: ["Philosophy", "Theater Arts", "Visual Arts", "Dance", "Business", " ",
+                    ButtonChoices: ["Theater Arts", "Visual Arts", "Dance", "Business", " ",
                                     "Chinese", "French", "German", "Latin", "Spanish", " ",
                                     "Economics", "History", "Psychology", " ",
                                     "Biology", "Chemistry", "Physics", "Comp. Sci."]
